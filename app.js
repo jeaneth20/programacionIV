@@ -27,7 +27,7 @@ function guardarRegistro(e){
     telefono=document.querySelector("#txttelAlumno").value,
     direccion=document.querySelector("#txtdireccionAlumno").value;
 
-    console.log(nombre, apellido, fecha, telefono, direccion);
+    console.log(nombre, apellido, telefono, direccion);
 
     if( 'localStorage' in window ){
         window.localStorage.setItem("codigo" + codigo, codigo);
