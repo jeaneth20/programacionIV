@@ -17,6 +17,16 @@ document.addEventListener("DOMContentLoaded", e=>{
         } else {
             alert("Por favor ACTUALIZATE!!!.");
         }
+        console.log(codigo, nombre, direccion, telefono);
+        if('localStorge' in window){
+
+            window.localStorage.setItem("codigo", codigo);
+            window.localStorage.setItem("nombre", nombre);
+            window.localStorage.setItem("direccion", direccion);
+            window.localStorage.setItem("telefono", telefono);
+        } else {
+            alert("por favor quedate ai")
+        }
     });
     document.querySelector("#btnRecuperarAlumno").addEventListener("click", event=>{
         document.querySelector("#txtCodigoAlumno").value = window.localStorage.getItem("codigo");

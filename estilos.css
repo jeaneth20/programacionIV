@@ -4,12 +4,12 @@ body{
     margin: 10px;
 }
 body > h1{
-    background-color: brown;
+    background-color: rgb(42, 165, 83);
     margin: 10px;
 }
 input{
     height: 24px;
-    border: 1px solid rgb(129, 131, 134);
+    border: 1px solid rgb(132, 129, 134);
     border-radius: 5px;
 }
 input[type=submit],
