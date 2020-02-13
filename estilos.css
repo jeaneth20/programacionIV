@@ -1,5 +1,5 @@
 h1{
-    text-align: center;
+    text-align: 150px;
     color: blanchedalmond;
     text-decoration-style: wavy;
     margin-top: 25px;
@@ -55,6 +55,6 @@ h1{
     input[type=file]:valid,
     input[type=url]:valid,
     input[type=tel]:valid{
-        background-color: rgb(14, 219, 14);
+        background-color: rgb(191, 252, 191);
         color: rgb(247, 239, 239);
     }
