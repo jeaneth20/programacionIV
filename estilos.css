@@ -15,7 +15,7 @@ input{
 input[type=submit],
 input[type=button],
 input[type=file]{
-    background-color: rgb(142, 176, 238);
+    background-color: rgb(142, 224, 238);
     color: #FFF;
     text-transform: uppercase;
     font-weight: bolder;
@@ -25,7 +25,7 @@ input[type=submit]:hover,
 input[type=button]:hover,
 input[type=file]:hover{
     color:  rgb(56, 99, 218);
-    background-color: #FFF;
+    background-color: rgb(255, 255, 255);
 }
 input[type=text]:invalid,
 input[type=date]:invalid,
