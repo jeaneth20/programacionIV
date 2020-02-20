@@ -1,18 +1,37 @@
-document.addEventListener("DOMContentLoaded",e=>{
-    document.addEventListener("submit",event=>{
+document.addEventListener("DOMContentLoaded", e=>{
+    document.querySelector("#frmAlumnos").addEventListener("submit", event=>{
         event.preventDefault();
 
-        let de = document.querySelector("#cboDe").value,
-            a = document.querySelector("#cboA").value,
-            cantidad = document.querySelector("#txtCantidadConversores").value,
-            $res = document.querySelector("#lblRespuesta");
-        let monedas={
-            'dolar':1,
-            'euro':0.92,
-            'quetzal':7.63,
-            'lempira':24.86,
-            'cordoba':34.20
-        };
-        $res.innerHTML = `Respuesta: ${ monedas[a] / monedas[de] * cantidad }`;
+        let codigo = document.querySelector("#txtCodigoAlumno").value,
+            nombre = document.querySelector("#txtNombreAlumno").value,
+            direccion = document.querySelector("#txtDireccionAlumno").value,
+            telefono = document.querySelector("#txtTelefonoAlumno").value;
+
+        console.log(codigo, nombre, direccion, telefono);
+        
+        if( 'localStorage' in window ){
+            window.localStorage.setItem("codigo", codigo);
+            window.localStorage.setItem("nombre", nombre);
+            window.localStorage.setItem("direccion", direccion);
+            window.localStorage.setItem("telefono", telefono);
+        } else {
+            alert("Por favor ACTUALIZATE!!!.");
+        }
+    });
+    document.querySelector("#btnRecuperarAlumno").addEventListener("click", event=>{
+        document.querySelector("#txtCodigoAlumno").value = window.localStorage.getItem("codigo");
+        document.querySelector("#txtNombreAlumno").value = window.localStorage.getItem("nombre");
+        document.querySelector("#txtDireccionAlumno").value = window.localStorage.getItem("direccion");
+        document.querySelector("#txtTelefonoAlumno").value = window.localStorage.getItem("telefono");
     });
 });
+
+/*document.addEventListener("DOMContentLoaded",function(e){
+    alert("CALLBACK LISTO");
+});*/
+
+/*document.addEventListener("DOMContentLoaded", init);
+
+function init(e){
+    alert("LISTO");
+}*/
