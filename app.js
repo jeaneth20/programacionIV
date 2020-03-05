@@ -36,3 +36,37 @@ document.addEventListener("DOMContentLoaded", e=>{
           $res.innerHTML = `Respuesta: ${ (longitudes[a]/longitudes[de]*cantidad).toFixed(7) }`;
         };
     });
+  });
+  
+
+  function elegir_opcion() {
+    let opcion = document.getElementById('cboConvertir'),
+    de1 = document.getElementById('cboDe'),
+    a1 = document.getElementById('cboA');
+
+    de1.value="";
+    a1.value="";
+    de1.innerHTML="";
+    a1.innerHTML="";
+  
+    if(opcion.value == "moneda"){
+      var  array = ["dolar!DOLAR","colones!COLONES","yenes!YENES","rupias!RUPIAS","lempira!LEMPIRA","peso!PESO","bitcoin!BITCOIN"]; 
+    } else if(opcion.value == "longitud"){
+      var array = ["metro!METRO","cm!CM","pulgada!PULGADA","pie!PIE","varas!VARAS","yarda!YARDA","km!KM","millas!MILLAS"];
+    };
+  
+    for(var i=0;i<array.length;i++){ 
+      var repair = array[i].split("!");
+      var newop = document.createElement("option");
+      newop.value = repair[0]
+      newop.innerHTML = repair[1];
+      de1.options.add(newop);
+    };
+    for(var i=0;i<array.length;i++){ 
+      var repair = array[i].split("!");
+      var newop = document.createElement("option");
+      newop.value = repair[0]
+      newop.innerHTML = repair[1];
+      a1.options.add(newop);
+    };
+   }
