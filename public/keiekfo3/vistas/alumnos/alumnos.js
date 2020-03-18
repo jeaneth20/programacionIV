@@ -1,10 +1,9 @@
--0,0 +1,21
 var $ = el => document.querySelector(el),
     frmAlumnos = $("#frmAlumnos");
 frmAlumnos.addEventListener("submit",e=>{
     e.preventDefault();
     e.stopPropagation();
-
+    
     let alumnos = {
         accion    : 'nuevo',
         codigo    : $("#txtCodigoAlumno").value,
@@ -19,4 +18,4 @@ frmAlumnos.addEventListener("submit",e=>{
             </div>
         `;
     });
-}); 
+});

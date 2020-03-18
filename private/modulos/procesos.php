@@ -1,4 +1,3 @@
-
 <?php 
 include('../../Config/Config.php');
 $alumno = new alumno($conexion);
@@ -13,7 +12,7 @@ print_r(json_encode($alumno->respuesta));
 class alumno{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
-
+    
     public function __construct($db){
         $this->db=$db;
     }
@@ -49,4 +48,4 @@ class alumno{
         }
     }
 }
-?> 
+?>
