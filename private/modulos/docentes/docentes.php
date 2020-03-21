@@ -1,5 +1,5 @@
 <?php 
-include('../../Config/Config.php');
+include('../../config/config.php');
 $docente = new docente($conexion);
 
 $proceso = '';
@@ -24,10 +24,10 @@ class docente{
         if( empty($this->datos['codigo']) ){
             $this->respuesta['msg'] = 'por favor ingrese el codigo del docente';
         }
-        if( empty($this->datos['nombre_d']) ){
+        if( empty($this->datos['nombre']) ){
             $this->respuesta['msg'] = 'por favor ingrese el nombre del docente';
         }
-        if( empty($this->datos['direccion_d']) ){
+        if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del docente';
         }
         $this->almacenar_docente();
@@ -36,11 +36,11 @@ class docente{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO docentes (codigo,nombre_d,direccion_d,telefono_d) VALUES(
+                    INSERT INTO docentes (codigo,nombre,direccion ,telefono) VALUES(
                         "'. $this->datos['codigo'] .'",
-                        "'. $this->datos['nombre_d'] .'",
-                        "'. $this->datos['direccion_d'] .'",
-                        "'. $this->datos['telefono_d'] .'"
+                        "'. $this->datos['nombre'] .'",
+                        "'. $this->datos['direccion'] .'",
+                        "'. $this->datos['telefono'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
