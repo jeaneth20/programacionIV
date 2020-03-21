@@ -7,11 +7,11 @@ frmDocentes.addEventListener("submit",e=>{
     let docentes = {
         accion    : 'nuevo',
         codigo    : $("#txtCodigoDocente").value,
-        nombre_d    : $("#txtNombreDocente").value,
-        direccion_d : $("#txtDireccionDocente").value,
-        telefono_d  : $("#txtTelefonoDocente").value
+        nombre    : $("#txtNombreDocente").value,
+        direccion : $("#txtDireccionDocente").value,
+        telefono  : $("#txtTelefonoDocente").value
     };
-    fetch(`private/Modulos/docentes/procesos.php?procesoD=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
+    fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(docentes)}`).then( resp=>resp.json() ).then(resp=>{
         $("#respuestaDocente").innerHTML = `
             <div class="alert alert-success" role="alert">
                 ${resp.msg}
