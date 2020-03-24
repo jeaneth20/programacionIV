@@ -1,4 +1,3 @@
-
 var $ = el => document.querySelector(el);
 document.addEventListener("DOMContentLoaded", event => {
    
