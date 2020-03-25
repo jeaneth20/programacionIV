@@ -1,3 +1,5 @@
+
+
 var $ = el => document.querySelector(el);
 document.addEventListener("DOMContentLoaded", event => {
    
@@ -22,6 +24,8 @@ document.addEventListener("DOMContentLoaded", event => {
  function colocarVista(modulo){
 
     fetch(`public/vistas/${modulo}/${modulo}.html`).then( resp => resp.text()).then( resp => {
+        
+        //console.log(resp);
 
         document.getElementById(`vistas-${modulo}`).innerHTML = resp;
         let btnCerrar = $(".close");
@@ -37,3 +41,4 @@ document.addEventListener("DOMContentLoaded", event => {
     });
 
  }
+ 

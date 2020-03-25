@@ -11,7 +11,10 @@ frmAlumnos.addEventListener("submit",e=>{
         direccion : $("#txtDireccionAlumno").value,
         telefono  : $("#txtTelefonoAlumno").value
     };
-    fetch(`private/modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(alumnos)}`).then( resp=>resp.json() ).then(resp=>{
+    console.log(alumnos);
+    fetch(`private/modulos/alumnos/procesos.php?proceso=recibirDatos&alumno=${JSON.stringify(alumnos)}`).then( resp=>resp.json()).then(resp=>{
+        
+        console.log(resp);
         $("#respuestaAlumno").innerHTML = `
             <div class="alert alert-success" role="alert">
                 ${resp.msg}

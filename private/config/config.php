@@ -2,6 +2,6 @@
 /**
  * Importamos la clase principal de conexion
  */
-include('../../Conexion/DB.php');
+include('../../conexion/BD.php');
 $conexion = new DB('localhost','root','','app-academica-kary');
 ?>
