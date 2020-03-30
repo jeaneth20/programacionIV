@@ -1,7 +1,11 @@
-
+function init(){
+    var $ = el => {
+        return el.match(/^#/) ? document.querySelector(el) : document.querySelectorAll(el);
+    };
 
 var $ = el => document.querySelector(el);
 document.addEventListener("DOMContentLoaded", event => {
+    
    
     let alumnos = document.getElementById("alumnos"); // Instanciamos los elementos
     let docentes = document.getElementById("docentes"); //
@@ -41,4 +45,6 @@ document.addEventListener("DOMContentLoaded", event => {
     });
 
  }
+}
+init();
  
