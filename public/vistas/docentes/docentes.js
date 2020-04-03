@@ -15,8 +15,9 @@ var appdocente = new Vue({
     methods:{
         guardarDocente:function(){
             fetch(`private/modulos/docentes/procesos.php?proceso=recibirDatos&docente=${JSON.stringify(this.docente)}`).then( resp=>resp.json() ).then(resp=>{
+                //console.log(resp);
                 this.docente.msg = resp.msg;
-                this.docente.idAlumno = 0;
+                this.docente.idDocente= 0;
                 this.docente.codigo = '';
                 this.docente.nombre = '';
                 this.docente.direccion = '';

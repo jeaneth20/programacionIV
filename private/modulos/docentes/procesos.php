@@ -30,8 +30,11 @@ class docente{
         if( empty($this->datos['direccion']) ){
             $this->respuesta['msg'] = 'por favor ingrese la direccion del docente';
         }
-        $this->almacenar_docente();
-    }
+         if( empty($this->datos['DUI']) ){
+        $this->respuesta['msg'] = 'por favor ingrese el DUi del docente';
+        }
+    $this->almacenar_docente();
+}
     private function almacenar_docente(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
@@ -61,10 +64,9 @@ class docente{
     }
     public function buscarDocente($valor = ''){
         $this->db->consultas('
-            select docentes.idDocente, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
+            select docentes.idDocentes, docentes.codigo, docentes.nombre, docentes.direccion, docentes.telefono, docentes.DUI
             from docentes
             where docentes.codigo like "%'. $valor .'%" or docentes.DUI like "%'. $valor .'%"
-
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
