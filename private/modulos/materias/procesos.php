@@ -57,7 +57,7 @@ class materia{
     }
     public function buscarMateria($valor = ''){
         $this->db->consultas('
-            select materias.idMateria, materias.codigo, materias.nombre, materia.descripcion
+            select materias.idMateria, materias.codigo, materias.nombre, materias.descripcion
             from materias
             where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%"
         ');

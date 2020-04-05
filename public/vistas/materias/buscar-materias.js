@@ -6,7 +6,7 @@ var appBuscarMateria = new Vue({
     },
     methods:{
         buscarMateria:function(){
-            fetch(`private/modulos/materias/procesos.php?proceso=buscarMateria&materia=${this.valor}`).then(resp=>resp.text()).then(resp=>{
+            fetch(`private/modulos/materias/procesos.php?proceso=buscarMateria&materia=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                //console.log(resp);
                 this.mismaterias = resp;
             });
